@@ -4,7 +4,7 @@ function drag(){
 }
 console.log(drag())
 function cc(){
-	var str = "dddddd";
+	var str = "dddddsfd";
 	return str;
 }
 console.log(ccc())

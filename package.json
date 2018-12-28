@@ -11,9 +11,11 @@
   "devDependencies": {
     "gulp": "^3.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "",
+    "gulp-imagemin": "^5.0.3",
     "gulp-rename": "^1.4.0",
+    "gulp-sass": "",
     "gulp-uglify": "^3.0.1",
-    "gulp-sass" : "",
-    "gulp-cssnano" : ""
+    "imagemin": "^6.1.0"
   }
 }
