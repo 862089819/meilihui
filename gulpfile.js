@@ -12,9 +12,10 @@ const imagemin = require('gulp-imagemin');
 //	console.log('hellow,小马')
 //})
  gulp.task('js',function(){
- 	gulp.src('src/js/*.js').pipe(concat('index.min.js'))
+ 	gulp.src('src/js/*.js')
+	.pipe(rename({"suffix" : ".min"}))
 	.pipe(uglify())
-	.pipe(gulp.dest('dist'));
+	.pipe(gulp.dest('./dist/js'));
 })
  gulp.task('default',function(){
 	gulp.watch('./src/js/*.js',['js']);
@@ -36,5 +37,7 @@ gulp.task('img',function(){
 })
 gulp.task('default',()=>{
 	gulp.watch('./src/sass/*.scss',['sass']);
+	gulp.watch('./src/js/*.js',['js']);
+	gulp.watch('./src/img/*.img',['img']);
 	
 })

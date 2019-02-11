@@ -1,0 +1,106 @@
+*{  margin: 0;
+    padding: 0;}
+    ul,ol,li{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+    #header{
+    width: 1000px;
+    height:46px;
+    margin-left: 100px;
+    margin-top: 40px;
+}   
+.bunner{
+    position: relative;
+        img{
+        height: 800px;
+        width:100%;
+        display: block;
+    }
+    .registered{
+        width: 350px;
+        height: 500px;
+        background: white;
+        position: absolute;
+        top: 163px;
+        right: 100px;
+        h3,p{
+            text-align: center;
+            margin: 10px 0;
+        }
+        p{
+            font-size: 12px;
+            span{
+                color: red;
+            }
+        }
+        ul{
+            li{
+                font-size: 12px;
+                width: 300px;
+                height: 50px;
+                margin: 30px auto;
+                #phone{
+                    width: 296px;
+                    height: 48px;
+
+                }
+                #v-code{
+                    width: 190px;
+                    height: 48px;
+                    float: left;
+                }
+                 #get-v-code{
+                    width: 96px;
+                    height: 52px;
+                    background: red;
+                    float: left;
+                    margin-left: 10px;
+                    text-align: center;
+                    line-height: 52px;
+                    color: white;
+                    font-size: 12px;
+                 }
+                 #code{
+                    width: 296px;
+                    height: 48px;
+                }
+                #no-phone,#code-conditions{
+                    color: red;
+                    display: none;
+                }
+            } 
+        }
+        #submit-1{
+            font-size: 12px;
+            a{
+                width: 12px;
+                height: 12px;
+                border: 1px solid gray;
+                display: block;
+                float: left;
+                margin-left: 26px;
+            }
+            span{
+                margin-left: 6px;
+            }
+        }
+        #submit-2{
+            width: 300px;
+            height: 50px;
+            background: #CDCDCD;
+            text-align: center;
+            line-height: 50px;
+            margin:10px auto;
+        }
+        #submit-3{
+            p{
+                float: right;
+                margin-right: 26px;
+            }
+        }
+    }
+} 
