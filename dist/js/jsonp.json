@@ -1,0 +1,15 @@
+getDate(
+	{"img":["../img/0f3b1ab914f4f8a873881caec082ccf4.min.jpg",
+			"../img/0f3b1ab914f4f8a86521f7557fc54fd0_002.min.jpg",
+			"../img/0f3b1ab914f4f8a82a868fa49a5d44e9_002.min.jpg",
+			"../img/8a572fc9bbe3504ce187e81117a5304e.min.jpg",
+			"../img/4fdeef55c537e1d0e187e81117a5304e_002.min.jpg",
+			"../img/6ef76cd5f8afbe9373881caec082ccf4_002.min.jpg",
+			"../img/6ef76cd5f8afbe93e187e81117a5304e_002.min.jpg",
+			"../img/29b1e6c356eb9e4be187e81117a5304e.min.jpg",
+			"../img/8a572fc9bbe3504c73881caec082ccf4_002.min.jpg",
+			"../img/4d6ede5cabfc75f1e187e81117a5304e.min.jpg"],
+	"price":[1156,1234,2000,5677,5432,1121,1212,7656,1209,998],
+	"del":[2156,2213,3455,7766,8887,3321,2134,8998,3321,2009],
+	},
+)
