@@ -1,33 +1,32 @@
-var oUname = document.getElementById("uname");
-var oPwd = document.getElementById("pwd");
-var oLog = document.getElementById("login");
-var oReg = document.getElementById("registor");
-oLog.onclick = function(){
-	var uname = oUname.value;
-	var pwd = oPwd.value;
-	var cookieStr = getCookie('registorUser') ? getCookie('registorUser') : '';
-	var obj = convertCookieStrToObj(cookieStr);
-	if(obj[uname] == pwd){
-		alert('登录成功！');
-		location.href = 'index.html';
-		createCookie('loginUser',uname,7);
+
+var oBtn = document.getElementById("submit-2");
+window.onload = function(){
+			var str = document.cookie;
+			var arr = str.split("; ");
+			for( var i = 0 ; i < arr.length ; i ++){
+				var itm = arr[i].split("=");
+				if( itm[0] == "phone"){
+					var username = itm[1];
+				}
+				if( itm[0] == "code"){
+					var userpwd = itm[1];
+				}
+			}
+			
+//			var username = arr[0].split("=")[1];
+//			var userpwd = arr[1].split("=")[1];
+			oBtn.onclick = function(){
+				var utpwd = code.value;
+				var utname = phone.value;
+//				console.log(username === utname && userpwd === utpwd)
+				if( username === utname && userpwd === utpwd){
+					alert("登陆成功")
+					location.href = "index.html";
+				}else{
+					alert("登录失败")
+
+					
+				}
+			}
+		}
 		
-	}else{
-		alert('用户名与密码不匹配！');
-	}
-}
-oReg.onclick = function(){
-	location.href = 'registor.html';
-}
-function convertCookieStrToObj(str){
-	if(!str){
-		return {};
-	}
-	var obj = {};
-	var arr = str.split(',');
-	for(var i = 0,len = arr.length;i < len ;i ++){
-		var list = arr[i].split(':');
-		obj[list[0]] = list[1];
-	}
-	return obj;
-}

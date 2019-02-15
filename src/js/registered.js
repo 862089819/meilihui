@@ -1,98 +1,41 @@
-window.onload = function(){
-	var oUname = document.getElementById("phone");
-	var oPwd = document.getElementById("code");
-	var oReg = document.getElementById("registor");
-	var oLog = document.getElementById("login");
-	var oSpanUn = document.getElementById("no-phone");
-	var oSpanPwd = document.getElementById("pass");
-	var arr = [false,false];
-	oUname.onblur = function(){
-		var uname = oUname.value;
-		var re = /^[\u4e00-\u9fa5\w]{3,12}$/;
-		if(!re.test(uname)){
-			oSpanUn.innerHTML = '您的用户名不符合规则';
-			oSpanUn.style.color = 'red';
-			arr[0] = false;
-		}else{
-			oSpanUn.innerHTML = '中文、字母、数字、下划线的组合,3到12位';
-			oSpanUn.style.color = 'greenyellow';
-			arr[0] = true;
-		}  
-	}
-	oPwd.onblur = function(){
-		var pwd = oPwd.value;
-		var re = /^\w{6,12}$/;
-		if(!re.test(pwd)){
-			oSpanPwd.innerHTML = '您的密码不符合规则';
-			oSpanPwd.style.color = 'red';
-			arr[1] = false;
-		}else{
-			oSpanPwd.innerHTML = '字母、数字、下划线，6到12位';
-			oSpanPwd.style.color = 'greenyellow';
-			arr[1] = true;
-		}
-	}
-	oReg.onclick = function(){
-		var uname = oUname.value;
-		var pwd = oPwd.value;
-		console.log(uname,pwd);
-		if(!uname){
-			alert('用户名不能为空！');
-			return;
-		}
-		if(arr.indexOf(false) != -1){
-			alert('请正确填写信息！');
-			return;
-		}
-		/*
-			'user1:pwd1,user2:pwd2,user3:pwd3'
-			{
-				user1 : pwd1,
-				user2 : pwd2,
-				user3 : pwd3
-			}
-		*/
-		var cookieStr = getCookie('registorUser') ? getCookie('registorUser') : '';
-		var cookieObj = convertCookieStrToObj(cookieStr);
-		if(uname in cookieObj){
-			alert('用户名已存在！');
-			return;
-		}else{
-			cookieObj[uname] = pwd;
-			cookieStr = convertObjToCookieStr(cookieObj);
-			createCookie('registorUser',cookieStr,7);
-			alert('注册成功！');
-		}
-		alert(decodeURIComponent(document.cookie))
-	}
-	oLog.onclick = function(){
-		location.href = 'login.html';
-	}
-	//将cookie字符串转为对象
-	function convertCookieStrToObj(str){
-		if(!str){
-			return {};
-		}
-		
-		var arr = str.split(','); //"a11:111111"
-		console.log(arr);
-		var obj = {};
-		for(var i = 0;i < arr.length;i ++){
-			var list = arr[i].split(':');
-			obj[list[0]] = list[1];
-		}
-		return obj;
-	}
-	//将对象转为cookie字符串
-	function convertObjToCookieStr(obj){
-		var str = '';
-		for(var i in obj){
-			var pwd = obj[i];
-			if(str){
-				str += ',';
-			}
-			str += i + ':' + pwd;
-		}
-		return str;
+
+var oBtn = document.getElementById("submit-2");
+var nop = document.getElementById("no-phone");
+var nopwd = document.getElementById("code-conditions");
+
+var oPhone = document.getElementById("phone");
+var oCode = document.getElementById("code");
+var alog = document.getElementById("alog")
+oPhone.onblur = function(){
+	var re = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/;
+	if(!re.test(oPhone.value)){
+		nop.style.display = "block";
+//		return false;
+	}else{
+		nop.style.display = "none";
 	}
 }
+oCode.onblur = function(){
+	var rew = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/;
+	if(!rew.test(oCode.value)){
+		nopwd.style.display = "block";
+//		return false;
+	}else{
+		nopwd.style.display = "none";
+		
+	}
+}
+	oBtn.onclick = function(){
+	var username = oPhone.value;
+	var userpwd = oCode.value;
+	var now = new Date();
+	now.setDate(now.getDate() + 30 );
+	document.cookie = "phone="+username+";expires="+now;
+	document.cookie = "code="+userpwd+";expires="+now;
+	if(!username){
+		alert("用户名不能为空")
+		}else{
+			location.href = "login.html";
+		alert("注册成功")
+		};
+	} 

@@ -95,6 +95,7 @@
             text-align: center;
             line-height: 50px;
             margin:10px auto;
+            cursor: pointer; 
         }
         #submit-3{
             p{
@@ -104,3 +105,10 @@
         }
     }
 } 
+#sbt{
+    height: 12px;
+    width: 12px;
+    border: 1px solid black;
+    display: inline-block;
+    margin-left: 25px; 
+}

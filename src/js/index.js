@@ -11,18 +11,8 @@ window.onscroll = function(){
 		nav.style.position = "";
 		returntop.style.display = "none";
 	} 
-	
+	 
 }         
-//选项卡
-//var $ulist = $(".activitieslist-box .day"),
-//$cons = $(".list .morelist");
-//$bor = $(".sliderbox .slider");
-//$ulist.click(function(){
-//	$(this).addClass("active").siblings().removeClass("active");
-//	$cons.eq( $(this).index() ).addClass("selected").siblings().removeClass("selected");
-//	$(this).addClass("border").siblings().removeClass("border")
-//$bor.eq( $(this).index() ).addClass("border").siblings().removeClass("border");
-//}) 
 $aaa = $("#returntop");
 $("#returntop").click(function(){
 	$("#returntop").css("display","none");
